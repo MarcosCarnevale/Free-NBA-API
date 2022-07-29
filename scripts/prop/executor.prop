@@ -1,0 +1,16 @@
+/bin/spark-submit \
+  --name "NBA_API" \
+  --master yarn \
+  --deploy-mode client \
+  --queue default \
+  --files ./conf/credential.ini \
+  --driver-memory 512M \
+  --conf "spark.driver.cores=1" \
+  --num-executors 1 \
+  --executor-memory 512M \
+  --executor-cores 1 \
+  --conf "spark.dynamicAllocation.enabled=true" \
+  --conf "spark.dynamicAllocation.minExecutors=1" \
+  --conf "spark.dynamicAllocation.maxExecutors=2" \
+  --conf "spark.shuffle.service.enabled=true" \
+  /home/93930688/classe/mindOrders.py conf.ini
