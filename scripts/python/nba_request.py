@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 
 #==============================================================================================================================
 # Create Spark Session
-sc = (SparkSession.builder.master("local").appName("MindOrders").
+sc = (SparkSession.builder.master("local").appName("NBA").
         enableHiveSupport().
     getOrCreate())
 
